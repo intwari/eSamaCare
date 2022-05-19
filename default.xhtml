@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+<h:body>
+
+	<ui:composition template="templateHome/common/commonLayout.xhtml">
+
+
+		<ui:define name="content">
+			<div class="container">
+
+				<div class="row">
+
+					<div class="col-xl-8 offset-xl-2 py-5">
+
+						<h1>Contact Us:</h1>
+
+						<h4>#{msg['msg.support.infomation']}</h4>
+						<h4>#{msg['msg.support.infomation.two']}</h4>
+
+
+						<form action="SendSupportEmail" method="post">
+
+							<div class="messages"></div>
+
+							<div class="controls">
+
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="form_name">#{msg['massages.cmn.common.first.fname']}
+												*</label> <input id="form_name" type="text" name="name"
+												class="form-control"
+												placeholder="Please enter your firstname *"
+												required="required" data-error="Firstname is required." />
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="form_lastname">#{msg['massages.cmn.common.last.lname']}*</label>
+											<input id="form_lastname" type="text" name="surname"
+												class="form-control"
+												placeholder="Please enter your lastname *"
+												required="required" data-error="Lastname is required." />
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="form_email">Email *</label> <input
+												id="form_email" type="email" name="email"
+												class="form-control" placeholder="Please enter your email *"
+												required="required" data-error="Valid email is required." />
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label for="form_need">#{msg['lebel.please.specify.your.need']}
+												*</label> <select id="form_need" name="need" class="form-control"
+												required="required" data-error="Please specify your need.">
+												<option value=""></option>
+												<option value="#{msg['label.partnership.request']}">#{msg['label.partnership.request']}</option>
+												<option value="#{msg['label.application.support']}">#{msg['label.application.support']}</option>
+												<option value="{msg['label.other']}">#{msg['label.other']}</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<div class="form-group">
+											<label for="form_message">#{msg['label.conta.message']}*</label>
+											<textarea id="form_message" name="message"
+												class="form-control" placeholder="Message for me *" rows="4"
+												required="required" data-error="Please, leave us a message."></textarea>
+											<div class="help-block with-errors"></div>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<input type="submit" class="btn btn-success btn-send"
+											value="Send message" />
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<p class="text-muted">
+											<strong>*</strong> #{msg['header.title.fieldmarked']} <a
+												href="http://www.tres.rw" target="_blank">Tres Website</a>.
+										</p>
+									</div>
+								</div>
+							</div>
+
+						</form>
+
+					</div>
+					<!-- /.8 -->
+
+				</div>
+				<!-- /.row-->
+
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>
